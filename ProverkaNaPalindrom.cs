@@ -35,20 +35,20 @@ namespace Variant4EmVlad
             {
                 for (int j = 0; j < r; j++)
                 {
-                    x = randomiser.Next(-100, 100);
+                    x = randomiser.Next(0, 100);
                     matrica[i, j] = x;
                 }
-                for (int i = 0; i < r; i++)
+            }
+                for (int e = 0; e < r; e++)
                 {
                     for (int j = 0; j < r; j++)
                     {
-                        Console.Write(matrica[i, j] + "\t");
+                        Console.Write(matrica[e, j] + "\t");
                     }
                     Console.WriteLine();
                 }
 
                 Console.ReadKey();
-            }
         }
     }
 }
