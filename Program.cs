@@ -7,7 +7,7 @@ namespace Variant4EmVlad
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1 - proverka na palindrom\n2 - matrica");
+            Console.WriteLine("1 - proverka na palindrom\n2 - matrica\n3 - sortirovka stroki");
             string valik = Console.ReadLine();
             if (int.Parse(valik)==1)
             {
@@ -17,6 +17,10 @@ namespace Variant4EmVlad
             {
                 ProverkaNaPalindrom.matrica();
 
+            }
+            else if (int.Parse(valik)==3)
+            {
+                ProverkaNaPalindrom.strinsort();
             }
 
         }

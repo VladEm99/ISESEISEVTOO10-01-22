@@ -31,24 +31,55 @@ namespace Variant4EmVlad
             int[,] matrica = new int[r, r];
             Random randomiser = new Random();
             int x;
+            int counterplus = 0;
+            int counterminus = 0;
+            int counterzero = 0;
             for (int i = 0; i < r; i++)
             {
                 for (int j = 0; j < r; j++)
                 {
-                    x = randomiser.Next(0, 100);
+                    x = randomiser.Next(-100, 100);
                     matrica[i, j] = x;
+                    if (x<0)
+                    {
+                        counterminus++;
+                    }
+                    else if (x>0)
+                    {
+                        counterplus++;
+                    }
+                    else if (x==0)
+                    {
+                        counterzero++;
+                    }
                 }
             }
-                for (int e = 0; e < r; e++)
+            for (int e = 0; e < r; e++)
                 {
-                    for (int j = 0; j < r; j++)
+                for (int j = 0; j < r; j++)
                     {
                         Console.Write(matrica[e, j] + "\t");
                     }
                     Console.WriteLine();
                 }
-
+                Console.WriteLine("Koli4estvo otricatelnqh elementov v matrice: "+counterminus);
+                Console.WriteLine("Koli4estvo polozhitelnqh elemntov v matrice: "+counterplus);
+                Console.WriteLine("Koli4estvo nulevqh elemntov v matrice: " + counterzero);
                 Console.ReadKey();
+        }
+        public static void strinsort()
+        {
+            Console.WriteLine("Vvedit proizvolnyjy stroky:   ");
+            var a = Console.ReadLine();
+            char[] ar = a.ToCharArray();
+            Console.WriteLine("Vvedennaja stroka:   ");
+            Console.WriteLine(ar);
+            Array.Sort(ar);
+            Console.WriteLine("Vvedennaja stroka otsortirovannaja po kody:   ");
+            Console.WriteLine(ar);
+            Array.Reverse(ar);
+            Console.WriteLine("Otsortirovannaja i razvernytaja stroka:   ");
+            Console.WriteLine(ar);
         }
     }
 }
